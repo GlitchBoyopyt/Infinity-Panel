@@ -1,0 +1,5 @@
+import subprocess  
+
+def start_server(server_id):  
+    command = f"bash start_server.sh {server_id}"  # Replace with actual command  
+    subprocess.Popen(command, shell=True)  
