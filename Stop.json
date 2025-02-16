@@ -1,0 +1,10 @@
+{
+  "msg": "Server Survival Server stopped successfully!",
+  "server": {
+    "_id": "server_id_here",
+    "userId": "user_id_here",
+    "name": "Survival Server",
+    "status": "stopped",
+    "expiresAt": "2025-02-20T00:00:00.000Z"
+  }
+}
