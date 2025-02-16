@@ -1,0 +1,5 @@
+const { authMiddleware, adminMiddleware } = require('../middleware/auth');
+
+router.get('/admin', authMiddleware, adminMiddleware, (req, res) => {
+    res.json({ message: 'Welcome, Admin!' });
+});
