@@ -1,2 +1,0 @@
-- name: Install Dependencies
-  run: yarn install --frozen-lockfile
