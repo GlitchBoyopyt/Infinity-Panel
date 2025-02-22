@@ -1,0 +1,9 @@
+{
+    "baseUri": "http://localhost:3001",
+    "port": 3001,
+    "domain": "localhost",
+    "mode": "production",
+    "version": "1.0.0",
+    "ogTitle": "InfinityPanel",
+    "ogDescription": "This is an instance of the InfinityPanel- learn more at github.com/Infinity-dev/InfinityLinks"
+} 
