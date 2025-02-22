@@ -24,3 +24,8 @@
   },
   "keywords": ["game", "panel", "nodejs", "express", "mongodb"]
 }
+
+"scripts": {
+  "start": "node server.js",
+  "dev": "nodemon server.js"
+}
