@@ -1,8 +1,8 @@
 {
-  "msg": "Server Survival Server started successfully!",
+  "msg": "Server started successfully!",
   "server": {
-    "_id": "server_id_here",
-    "userId": "user_id_here",
+    "_id": "65c1234abc6789def0123456",
+    "userId": "65b9876def0123abc4567890",
     "name": "Survival Server",
     "status": "running",
     "expiresAt": "2025-02-20T00:00:00.000Z"
