@@ -1,0 +1,10 @@
+res.json({
+    msg: `Server ${server.name} started successfully!`,
+    server: {
+        _id: server._id,
+        userId: server.userId,
+        name: server.name,
+        status: server.status,
+        expiresAt: server.expiresAt
+    }
+});
