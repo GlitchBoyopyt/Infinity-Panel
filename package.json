@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
+    "sequelize": "6.37.5
   },
   "keywords": ["game", "panel", "nodejs", "express", "mongodb"]
 }
