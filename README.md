@@ -33,14 +33,6 @@ Before installing Infinity Panel, ensure you have the following installed on you
 ```bash
 git clone https://github.com/GlitchBoyopyt/Infinity_Links.git
 cd Infinity_Links
-
-
-### Installation Steps
-
-#### 1. Clone the Repository
-```bash
-git clone https://github.com/GlitchBoyopyt/Infinity_Links.git
-cd Infinity_Links
 ```
 
 #### 2. Set Up Environment Variables
