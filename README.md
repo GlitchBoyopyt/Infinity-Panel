@@ -1,24 +1,39 @@
-# Infinity Links Panel
+# **Infinity Panel**  
 
-## About
-Infinity Links is a powerful and user-friendly panel designed to manage and deploy servers with ease. It provides an intuitive interface for users to control their services efficiently.
+## **About**  
+Infinity Panel is a powerful and user-friendly management panel designed for seamless server deployment and control. It provides an intuitive interface for users to efficiently manage their services.  
 
-## Features
-- Easy server management
-- Secure authentication
-- Real-time monitoring
-- Docker support
-- API integrations
+## **Features**  
+- 🚀 **Easy Server Management**  
+- 🔐 **Secure Authentication**  
+- 📊 **Real-Time Monitoring**  
+- 🐳 **Docker Support**  
+- 🔗 **API Integrations**  
 
-## Installation Guide
+---
 
-### Prerequisites
-Before installing Infinity Links, ensure you have the following installed on your system:
-- **Git**
-- **Docker & Docker Compose**
-- **Node.js & npm**
-- **PHP & Composer**
-- **MySQL or PostgreSQL**
+## **Installation Guide**  
+
+### **Prerequisites**  
+Before installing Infinity Panel, ensure you have the following installed on your system:  
+- **Git**  
+- **Docker & Docker Compose**  
+- **Node.js & npm**  
+- **PHP & Composer**  
+- **MySQL or PostgreSQL**  
+
+---
+
+### **Installation Steps**  
+
+#### **1️⃣ Clone the Repository**  
+<details>
+<summary>Click to Copy</summary>
+
+```bash
+git clone https://github.com/GlitchBoyopyt/Infinity_Links.git
+cd Infinity_Links
+
 
 ### Installation Steps
 
