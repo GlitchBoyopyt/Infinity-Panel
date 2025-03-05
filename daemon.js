@@ -1,52 +1,45 @@
-const express = require("express");
-const si = require("systeminformation"); // System monitoring package
-const { exec } = require("child_process");
+// Import required modules
+const express = require('express');
+const cors = require('cors');
+const { exec } = require('child_process');
 
+// Initialize Express app
 const app = express();
+const PORT = process.env.PORT || 3001;
+
+// Middleware
+app.use(cors());
 app.use(express.json());
-app.use(require("cors")());
 
-const PORT = 4000;
-let serverStatus = {}; // Store server performance data
+// API Route to Check Daemon Status
+app.get('/status', (req, res) => {
+    res.json({ status: 'Daemon is running', uptime: process.uptime() });
+});
 
-// Function to get system stats
-const getServerStats = async (serverId) => {
-    const cpu = await si.currentLoad();
-    const mem = await si.mem();
-    const uptime = await si.time();
-
-    return {
-        cpuUsage: cpu.currentLoad.toFixed(2) + "%",
-        ramUsage: ((mem.used / mem.total) * 100).toFixed(2) + "%",
-        uptime: uptime.uptime + "s",
-        status: serverStatus[serverId] || "unknown",
-    };
-};
-
-// Start a server
-app.post("/start/:serverId", async (req, res) => {
-    const { serverId } = req.params;
-    exec(`./start-${serverId}.sh`, () => {
-        serverStatus[serverId] = "running";
+// API Route to Start a Server (Example: Docker Container)
+app.post('/start', (req, res) => {
+    const { containerName } = req.body;
+    if (!containerName) return res.status(400).json({ error: 'Container name required' });
+    
+    exec(`docker start ${containerName}`, (error, stdout, stderr) => {
+        if (error) return res.status(500).json({ error: stderr });
+        res.json({ message: `Started container ${containerName}`, output: stdout });
     });
-    res.json({ msg: `Server ${serverId} started!` });
 });
 
-// Stop a server
-app.post("/stop/:serverId", async (req, res) => {
-    const { serverId } = req.params;
-    exec(`./stop-${serverId}.sh`, () => {
-        serverStatus[serverId] = "stopped";
+// API Route to Stop a Server
+app.post('/stop', (req, res) => {
+    const { containerName } = req.body;
+    if (!containerName) return res.status(400).json({ error: 'Container name required' });
+    
+    exec(`docker stop ${containerName}`, (error, stdout, stderr) => {
+        if (error) return res.status(500).json({ error: stderr });
+        res.json({ message: `Stopped container ${containerName}`, output: stdout });
     });
-    res.json({ msg: `Server ${serverId} stopped!` });
 });
 
-// Get server performance data
-app.get("/stats/:serverId", async (req, res) => {
-    const { serverId } = req.params;
-    const stats = await getServerStats(serverId);
-    res.json(stats);
+// Start Daemon
+app.listen(PORT, () => {
+    console.log(`Daemon is running on port ${PORT}`);
 });
-
-// Start the Daemon API
-app.listen(PORT, () => console.log(`✅ Daemon running on port ${PORT}`));
+                                             
